@@ -5914,7 +5914,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/api/updLibros', {
         'descripcion': me.comentario,
         'nombre': me.firstname,
-        'idBiblioteca': me.select.id,
+        'idBiblioteca': this.select,
         'id': me.id
       }).then(function (response) {
         me.dialog = false;
