@@ -5911,10 +5911,19 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       var me = this;
+      var variableId = 0;
+
+      if (Number.isInteger(this.select)) {
+        variableId = this.select;
+      } else {
+        variableId = this.select.id;
+      }
+
+      console.log(this.select, Number.isInteger(this.select));
       axios.post('/api/updLibros', {
         'descripcion': me.comentario,
         'nombre': me.firstname,
-        'idBiblioteca': this.select,
+        'idBiblioteca': variableId,
         'id': me.id
       }).then(function (response) {
         me.dialog = false;
